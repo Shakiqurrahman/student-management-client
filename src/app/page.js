@@ -1,12 +1,10 @@
-import SideBar from "@/components/SideBar";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Link } from "lucide-react";
-
 export default function Home() {
   return (
-    <section>
-      <h1>Hello World</h1>
+    <section className="h-[100vh]">
+      <div>
+        <h1 className="text-3xl font-semibold">Dashboard</h1>
+        <p className="text-sm">Student Management</p>
+      </div>
     </section>
-    
   );
 }
