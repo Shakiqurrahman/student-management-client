@@ -20,10 +20,10 @@ const Header = () => {
           </div>
           <Link href="/">
             <div className="flex items-center gap-2">
-              <BookOpenText className="text-primary size-12" />
+              <BookOpenText className="text-primary size-10 sm:size-12" />
               <div>
-                <h1 className="text-2xl font-semibold">Dashboard</h1>
-                <p className="text-sm">Student Management</p>
+                <h1 className="text-lg sm:text-2xl font-semibold">Dashboard</h1>
+                <p className="text-[12px] sm:text-sm">Student Management</p>
               </div>
             </div>
           </Link>

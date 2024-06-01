@@ -10,7 +10,7 @@ import { PiStudentFill } from "react-icons/pi";
 
 const SideBar = () => {
   const pathname = usePathname();
-  const { isActive } = useContext(ActiveContext);
+  const { isActive, toggleHamburger } = useContext(ActiveContext);
   return (
     <aside className="lg:w-[240px]  relative">
       <ul
@@ -25,6 +25,7 @@ const SideBar = () => {
             className={`link ${
               pathname === "/" ? "active" : ""
             } flex gap-4 text-[#7e7e7e] text-xl  px-8 py-5 hover:text-primary duration-300`}
+            onClick={toggleHamburger}
           >
             <MdDashboard size={25} />
             Dashboard
@@ -35,6 +36,7 @@ const SideBar = () => {
             className={`link ${
               pathname === "/students" ? "active" : ""
             } flex items-center gap-4 text-[#7e7e7e] text-xl  px-8 py-5 hover:text-primary duration-300`}
+            onClick={toggleHamburger}
           >
             <PiStudentFill size={25} />
             Students
@@ -45,7 +47,8 @@ const SideBar = () => {
             className={`link ${
               pathname === "/attendence" ? "active" : ""
             } flex items-center gap-4 text-[#7e7e7e] text-xl  px-8 py-5 hover:text-primary duration-300`}
-          >
+            onClick={toggleHamburger}
+            >
             <ListChecks size={25} />
             Attendence
           </li>
@@ -55,7 +58,8 @@ const SideBar = () => {
             className={`link ${
               pathname === "/results" ? "active" : ""
             } flex items-center gap-4 text-[#7e7e7e] text-xl  px-8 py-5 hover:text-primary duration-300`}
-          >
+            onClick={toggleHamburger}
+            >
             <BookCheck size={25} />
             Results
           </li>
@@ -65,7 +69,8 @@ const SideBar = () => {
             className={`link ${
               pathname === "/subjects" ? "active" : ""
             } flex items-center gap-4 text-[#7e7e7e] text-xl  px-8 py-5 hover:text-primary duration-300`}
-          >
+            onClick={toggleHamburger}
+            >
             <FaBook size={25} />
             Subjects
           </li>
