@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         <div className="lg:flex gap-10">
+          <div className="hidden lg:block">
           <SideBar />
+          </div>
           <main className="flex-1 mt-4 p-4 md:p-8">
           {children}
           </main>

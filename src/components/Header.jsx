@@ -1,12 +1,27 @@
+'use client'
 import { BookOpenText, CircleUserRound } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { useState } from "react";
+import SideBar from "./SideBar";
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleNav = () => {
+    setIsActive(!isActive);
+  }
   return (
     <header className="h-24">
       <div className="border-b bg-white text-black fixed top-0 w-full z-50">
         <div className="h-24 flex items-center justify-between gap-2 px-4 md:px-8 ">
+          <div className="nav-control lg:hidden">
+            <div onClick={toggleNav} className={`${isActive ? 'hamburger active' : 'hamburger'}`}>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+            </div>
+          </div>
           <Link href="/">
             <div className="flex items-center gap-2">
               <BookOpenText className="text-primary size-12" />
@@ -28,6 +43,9 @@ const Header = () => {
             <CircleUserRound className="ml-2 size-6" />
           </Button>
         </div>
+      </div>
+      <div className="lg:hidden">
+      <SideBar isActive={isActive}/>
       </div>
     </header>
   );

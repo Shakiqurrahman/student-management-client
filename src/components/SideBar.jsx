@@ -6,11 +6,11 @@ import { FaBook } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const SideBar = () => {
+const SideBar = ({isActive}) => {
   const pathname = usePathname();
   return (
-    <aside className="lg:w-[240px]  relative">
-      <ul className="text-black bg-white w-full md:w-[250px] hidden lg:block  left-0  fixed top-24 h-full pt-4  shadow-lg">
+    <aside className='lg:w-[240px]  relative'>
+      <ul className={`text-black bg-white w-full md:w-[250px] lg:block  left-0  fixed top-24 h-full pt-4  shadow-lg md:translate-x-0 ${isActive ? 'translate-x-0 duration-300' : 'translate-x-[-100%] duration-300'}`}>
         <Link href="/">
           <li
             className={`link ${
