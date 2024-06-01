@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
+import { ActiveProvider } from "@/context/ActiveProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -14,15 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <div className="lg:flex gap-10">
-          <div className="hidden lg:block">
-          <SideBar />
+        <ActiveProvider>
+          <Header />
+          <div className="lg:flex gap-10">
+            <SideBar />
+            <main className="flex-1 mt-4 p-4 md:p-8">{children}</main>
           </div>
-          <main className="flex-1 mt-4 p-4 md:p-8">
-          {children}
-          </main>
-        </div>
+        </ActiveProvider>
       </body>
     </html>
   );
