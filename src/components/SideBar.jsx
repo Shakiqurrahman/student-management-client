@@ -9,8 +9,8 @@ import { usePathname } from "next/navigation";
 const SideBar = () => {
   const pathname = usePathname();
   return (
-    <aside className="md:w-[250px]  relative">
-      <ul className="text-black bg-white w-full md:w-[250px]  left-0  fixed top-24 h-full pt-4  shadow-lg">
+    <aside className="lg:w-[240px]  relative">
+      <ul className="text-black bg-white w-full md:w-[250px] hidden lg:block  left-0  fixed top-24 h-full pt-4  shadow-lg">
         <Link href="/">
           <li
             className={`link ${
